@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <style>
+        body {
+            background-color: #fffaf6;
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            color: #333;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 30px;
+            background-color: #fdfdfd;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #8B0000;
+        }
+        p {
+            font-size: 20px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #8B0000;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        a:hover {
+            background-color: #a30000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <p>{{ prediction_text }}</p>
+        <a href="/">Try Another</a>
+    </div>
+</body>
+</html>

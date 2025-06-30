@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wine Type Predictor</title>
+    <style>
+        body {
+            background-color: #fffaf6;
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            color: #333;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 25px;
+            background-color: #fdfdfd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #8B0000;
+            text-align: center;
+        }
+        label, input {
+            display: block;
+            width: 100%;
+            margin-bottom: 12px;
+        }
+        input {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #8B0000;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #a30000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Wine Type Predictor</h1>
+        <form action="/predict" method="post">
+            {% for feature in [
+                'fixed acidity', 'volatile acidity', 'citric acid', 'residual sugar', 'chlorides',
+                'free sulfur dioxide', 'total sulfur dioxide', 'density', 'pH', 'sulphates', 'alcohol','quality'
+            ] %}
+                <label>{{ feature.replace('_', ' ').capitalize() }}</label>
+                <input type="number" step="any" name="{{ feature }}" required>
+            {% endfor %}
+            <button type="submit">Predict Wine Type</button>
+        </form>
+    </div>
+</body>
+</html>

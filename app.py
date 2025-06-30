@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 import pickle
 import numpy as np
-import pandas
+
 
 app = Flask(__name__)
 # Load model and label encoder
